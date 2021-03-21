@@ -33,7 +33,7 @@ public class ScheduledTasks {
 	@Autowired
 	RestTemplate restTemplate;
 
-	static String paymentTermsURL = "http://localhost:8080/api/v2/paymentTerms";
+	static String paymentTermsURL = "http://localhost:8080/api/v1/paymentTerms";
 
 	// for every minute cron job will run
 	// @Scheduled(cron = "0 * * * * ?")
