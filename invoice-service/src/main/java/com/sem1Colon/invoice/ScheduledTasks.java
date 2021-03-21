@@ -60,17 +60,17 @@ public class ScheduledTasks {
 						try {
 							Boolean sendNotification = validateInvoiceNotificationDate(paymentTermsMap, invoice);
 							if (sendNotification) {
-								logger.info("Reminder sent for Invoice" + invoice.getInvoiceNumber());
+								logger.info("Reminder sent for invoice: " + invoice.getInvoiceNumber());
 							}
 						} catch (Exception e) {
-							logger.info("Error occured while processing invoice" + invoice.getInvoiceNumber());
+							logger.info("Error occured while processing invoice: " + invoice.getInvoiceNumber());
 						}
 					}
 				} else {
-					logger.info("PaymentTerms are empty. please contact admin");
+					logger.info("PaymentTerms are empty, please contact the admin!");
 				}
 			} catch (Exception e) {
-				logger.info("Error occured while getting paymentTerms");
+				logger.info("Error occured while getting paymentTerms.");
 			}
 		}
 	}
@@ -106,7 +106,7 @@ public class ScheduledTasks {
 				sendNotification = true;
 			}
 		} else {
-			logger.info("Invoice PaymentTerm doesn't exist in PaymentTerm Table" + invoice.getPaymentTerm());
+			logger.info("Invoice PaymentTerm doesn't exist in PaymentTerm Table " + invoice.getPaymentTerm());
 		}
 		;
 		return sendNotification;
